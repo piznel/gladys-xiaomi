@@ -1,0 +1,11 @@
+{
+  "name": "gladys-xiaomi",
+  "version": "0.1.1",
+  "description": "Gladys module to control xiaomi",
+  "main": "index.js",
+  "keywords": [
+    "Gladys",
+    "xiaomi"
+  ],
+  "author": "piznel"
+}
