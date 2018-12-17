@@ -65,9 +65,22 @@ Depuis le premier onglet du menu "Paramètres", en cliquant sur le bouton "Redé
 
 ###  3.3. <a name='RenseignerleoulesmotsdepassedevotreouvospasserellesXiaomi'></a>Renseigner le ou les mot(s) de passe de votre ou vos passerelle(s) Xiaomi
 
-Retourner dans la liste des modules, et cliquez sur le bouton 'configuration'.
+Retourner dans la liste des modules, et cliquez sur le bouton 'configuration'. La page de configuration contient 3 tableaux :
+
+* tableau de gauche :
+
+il contient la liste des passerelles découvertes, leur adresse IP, ainsi que leur mot de passe, si vous l'avez déjà renseigné. Sinon, renseignez le.
+
+* tableau central :
+
+Il contient la liste des périphériques non-gérés actuellement par ce module. Vous pouvez participez au développement de ce module, en suivant les consignes de l'[annexe 7](#Annexe:Commentdemanderlajoutdunpriphrique).
+
+* tableau de droite :
+
+il contient la liste des matériels qui n'ont pas pu être intégré dans Gladys, car ils ont été déclaré par plusieurs passerelle. Voir le paragraphe suivant pour résoudre cette difficulté.
 
 ###  3.4. <a name='Logiquedefonctionnementdecemodule'></a>Logique de fonctionnement de ce module
+
 A chaque démarrage de Gladys, un message est envoyé sur votre réseau, auquel seules les passerelles répondent, en nous donnant leur identifiant (= sid chez Xiaomi), ainsi que leur adresse IP. En retour, nous leur demandons alors la liste des identifiants des périphériques qu'elles ont d'enregistré.
 
 Nous interrogeons alors chaque périphérique, qui nous répond en retour en nous donnant son nom et quelques une de ses caractéristiques.
