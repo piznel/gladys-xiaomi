@@ -3,14 +3,14 @@
 <script src="/hooks/xiaomi-home/js/xiaomi.service.js"></script>
 
 <div data-ng-controller="xiaomiCtrl as vm">
-  <div class="row">
+  <div class="row ng-cloak">
     <div class="col-centered col-md-4">
       <div class="box box-widget widget-user-2 card grid-item">
         <div class="box-header with-border">
           <h3 class="widget-user-username">{{ 'GATEWAY' | translate }}</h3>
         </div>
         <div class="box-body table-responsive">
-          <table class="table table-striped">
+          <table class="table table-striped ng-cloak">
             <thead>
               <tr>
                 <th>
@@ -37,7 +37,7 @@
                 </td>
               </tr>
               <tr ng-show="vm.gatewaysCount == 0">
-                <td colspan="3" style="text-align:center">
+                <td colspan="3" style="text-align:center" class="text-red">
                   {{ 'NO_GATEWAY' | translate }}
                 </td>
               </tr>
@@ -45,8 +45,8 @@
           </table>
         </div>
         <div class="box-footer">
-          <button class="btn btn-flat btn-success  " ng-click="vm.refresh"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
-          <button class="btn btn-flat btn-success  " ng-click="vm.savePassword"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
+          <button class="btn btn-flat btn-success" ng-click="vm.refresh()"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
+          <button class="btn btn-flat btn-success" ng-click="vm.savePassword()"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
                 </td>
               </tr>
               <tr ng-show="vm.uncreatedCount == 0">
-                <td colspan="3" style="text-align:center">
+                <td colspan="3" style="text-align:center" class="text-green">
                   {{ 'NO_UNCREATED' | translate }}
                 </td>
               </tr>
@@ -113,7 +113,7 @@
                 </td>
               </tr>
               <tr ng-show="vm.unknownCount == 0">
-                <td colspan="3" style="text-align:center">
+                <td colspan="3" style="text-align:center" class="text-green">
                   {{ 'NO_UNKNOWN' | translate }}
                 </td>
               </tr>
@@ -123,7 +123,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row ng-cloak">
     <div class="col-centered col-md-4">
       {{ 'GATEWAY_TEXT_1' | translate }}<br />
       {{ 'GATEWAY_TEXT_2' | translate }}<br />
