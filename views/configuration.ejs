@@ -2,17 +2,148 @@
 <script src="/hooks/xiaomi-home/js/xiaomi.controller.js"></script>
 <script src="/hooks/xiaomi-home/js/xiaomi.service.js"></script>
 
- <div data-ng-controller="xiaomiCtrl as vm">
-    <div class="box skin-box box-default no-border ng-cloak">
+<div data-ng-controller="xiaomiCtrl as vm">
+  <div class="row">
+    <div class="col-centered col-md-4">
+      <div class="box box-widget widget-user-2 card grid-item">
         <div class="box-header with-border">
-            <h3 class="box-title">BROADLINK</h3>
+          <h3 class="widget-user-username">{{ 'GATEWAY' | translate }}</h3>
         </div>
-    </div>
-    <div class="form-group">
-    <div class="row">
-        <div class="col-xs-3">
-        </select>
+        <div class="box-body table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  {{ 'IDENTIFIER' | translate }}
+                </th>
+                <th>
+                  {{ 'IP' | translate }}
+                </th>
+                <th>
+                  {{ 'PASSWORD' | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="gateway in vm.gateways" class="ng-cloak">
+                <td style="vertical-align:middle">
+                  {{gateway.sid}}
+                </td>
+                <td style="vertical-align:middle">
+                  {{gateway.ip}}
+                </td>
+                <td>
+                  <input type="text" ng-model="gateway.password" class="form-control" /></td>
+                </td>
+              </tr>
+              <tr ng-show="vm.gatewaysCount == 0">
+                <td colspan="3" style="text-align:center">
+                  {{ 'NO_GATEWAY' | translate }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <div class="box-footer">
+          <button class="btn btn-flat btn-success  " ng-click="vm.refresh"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
+          <button class="btn btn-flat btn-success  " ng-click="vm.savePassword"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
+        </div>
+      </div>
     </div>
+    <div class="col-centered col-md-4">
+      <div class="box box-widget widget-user-2 card grid-item">
+        <div class="box-header with-border">
+          <h3 class="widget-user-username">{{ 'UNCREATED_DEVICE' | translate }}</h3>
+        </div>
+        <div class="box-body table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  {{ 'IDENTIFIER' | translate }}
+                </th>
+                <th>
+                  {{ 'MODEL' | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="uncreated in vm.uncreated" class="ng-cloak">
+                <td>
+                  {{uncreated.sid}}
+                </td>
+                <td>
+                  {{uncreated.model}}
+                </td>
+              </tr>
+              <tr ng-show="vm.uncreatedCount == 0">
+                <td colspan="3" style="text-align:center">
+                  {{ 'NO_UNCREATED' | translate }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-</div> 
+    <div class="col-centered col-md-4">
+      <div class="box box-widget widget-user-2 card grid-item">
+        <div class="box-header with-border">
+          <h3 class="widget-user-username">{{ 'UNKNOWN_DEVICE' | translate }}</h3>
+        </div>
+        <div class="box-body table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  {{ 'IDENTIFIER' | translate }}
+                </th>
+                <th>
+                  {{ 'MODEL' | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="unknown in vm.unknown" class="ng-cloak">
+                <td>
+                  {{unknown.sid}}
+                </td>
+                <td>
+                  {{unknown.model}}
+                </td>
+              </tr>
+              <tr ng-show="vm.unknownCount == 0">
+                <td colspan="3" style="text-align:center">
+                  {{ 'NO_UNKNOWN' | translate }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-centered col-md-4">
+      {{ 'GATEWAY_TEXT_1' | translate }}<br />
+      {{ 'GATEWAY_TEXT_2' | translate }}<br />
+      {{ 'GATEWAY_TEXT_3' | translate }}<br />
+      {{ 'GATEWAY_TEXT_4' | translate }}
+    </div>
+    <div class="col-centered col-md-4">
+      {{ 'UNCREATED_TEXT_1' | translate }}<br />
+      {{ 'UNCREATED_TEXT_2' | translate }}<br />
+      {{ 'UNCREATED_TEXT_3' | translate }}<br />
+      {{ 'UNCREATED_TEXT_4' | translate }}
+    </div>
+    <div class="col-centered col-md-4">
+      {{ 'UNKNOWN_TEXT_1' | translate }}<br />
+      {{ 'UNKNOWN_TEXT_2' | translate }} <a href="{{ 'GITHUB_README' | translate }}" target=_blank>{{ 'UNKNOWN_TEXT_3' | translate }}</a>
+    </div>
+
+
+  </div>
+
+
+
+</div>

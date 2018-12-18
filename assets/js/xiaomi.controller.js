@@ -1,63 +1,81 @@
-   
- (function () {
-    'use strict';
+   (function() {
+     'use strict';
 
-    angular
-        .module('gladys')
-        .controller('xiaomiCtrl', xiaomiCtrl);
+     angular
+       .module('gladys')
+       .controller('xiaomiCtrl', xiaomiCtrl);
 
-        xiaomiCtrl.$inject = ['xiaomiService', '$scope'];
+     xiaomiCtrl.$inject = ['xiaomiService', '$scope'];
 
-    function xiaomiCtrl(xiaomiService, $scope) {
-        /* jshint validthis: true */
-        var vm = this
-        vm.gateways = [];
-        vm.gatewaysReady = false;
-        vm.uncreated = [];
-        vm.uncreatedReady = false;
-        vm.unknown = []
-        vm.unknownReady = false;
-        
-        activate()
+     function xiaomiCtrl(xiaomiService, $scope) {
+       /* jshint validthis: true */
+       var vm = this
+       vm.gateways = [];
+       vm.gatewaysReady = false;
+       vm.gatewaysCount = 0;
+       vm.uncreated = [];
+       vm.uncreatedReady = false;
+       vm.uncreatedCount = 0;
+       vm.unknown = []
+       vm.unknownReady = false;
+       vm.unknowCount = 0;
 
-        function activate() {
-            xiaomiService.gateways()
-                .then(function(result){
-                    if(result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
-                    vm.gateways = result.data
-                    if(vm.gateways.length == 0) {
-                        xiaomiService.errorNotificationTranslated('NO_GATEWAY')
-                        vm.gatewaysReady = false
-                    }else {
-                        vm.gatewaysReady = true
-                    }
-                })
+       vm.refresh = refresh;
+       vm.savePassword = savePassword;
 
-            xiaomiService.uncreated()
-                .then(function(result){
-                    if(result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
-                    vm.uncreated = result.data
-                    if(vm.uncreated.length == 0) {
-                        xiaomiService.errorNotificationTranslated('NO_GATEWAY')
-                        vm.uncreatedReady = false
-                    }else {
-                        vm.uncreatedReady = true
-                    }
-                })
+       activate()
 
-            xiaomiService.unknown()
-                .then(function(result){
-                    if(result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
-                    vm.unknown = result.data
-                    if(vm.unknown.length == 0) {
-                        xiaomiService.errorNotificationTranslated('NO_GATEWAY')
-                        vm.unknownReady = false
-                    }else {
-                        vm.unknownReady = true
-                    }
-                })
-        }
+       function refresh() {
+         activate()
+       }
+
+       function savePassword() {
+         return xiaomiService.savePassword(vm.gateways)
+           .then(function(result) {
+             if (result.status == 200) {
+               xiaomiService.successNotificationTranslated('PASSWORD_UPDATED');
+             } else { xiaomiService.errorNotificationTranslated('ERROR') }
+           })
+       }
 
 
-    }
-})();
+       function activate() {
+         xiaomiService.gateways()
+           .then(function(result) {
+             if (result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
+             vm.gateways = result.data
+             vm.gatewaysCount = vm.gateways.length
+             if (vm.gatewaysCount === 0) {
+               xiaomiService.errorNotificationTranslated('NO_GATEWAY')
+               vm.gatewaysReady = false
+             } else {
+               vm.gatewaysReady = true
+             }
+           })
+
+         xiaomiService.uncreated()
+           .then(function(result) {
+             if (result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
+             vm.uncreated = result.data
+             vm.uncreatedCount = vm.uncreated.length;
+             if (vm.uncreatedCount === 0) {
+               xiaomiService.successNotificationTranslated('NO_UNKNOWN')
+             }
+             vm.uncreatedReady = true
+           })
+
+         xiaomiService.unknown()
+           .then(function(result) {
+             if (result.status != 200) xiaomiService.errorNotificationTranslated('ERROR')
+             vm.unknown = result.data
+             vm.unknownCount = vm.unknown.length
+             if (vm.unknownCount === 0) {
+               xiaomiService.successNotificationTranslated('NO_UNCREATED')
+             }
+             vm.unknownReady = true
+           })
+       }
+
+
+     }
+   })();
