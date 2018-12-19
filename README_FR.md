@@ -28,7 +28,7 @@ Les périphériques déjà créés par le module officiel sont compatibles avec 
     - [Les boutons poussoirs muraux sans fils](#les-boutons-poussoirs-muraux-sans-fils)
   - [Annexe : mode "débugage"](#annexe--mode-débugage)
     - [Xiaomi_debug](#xiaomi_debug)
-    - [Xiaomi_debugDevice](#xiaomi_debugdevice)
+    - [Xiaomi_debug_device](#xiaomi_debug_device)
   - [Annexe : Demander l'ajout d'un périphérique](#annexe--demander-lajout-dun-périphérique)
     - [Plongée dans les logs de Gladys](#plongée-dans-les-logs-de-gladys)
     - [Analyse des logs obtenus](#analyse-des-logs-obtenus)
@@ -301,7 +301,7 @@ S'il est présent, et selon sa valeur, nous obtenons dans les logs les élément
 | 6      | Le message renvoyé aux périphériques qui tardent à répondre.                      |
 | 7      | La commande envoyée par la passerelle vers un actionneur                          |
 
-### Xiaomi_debugDevice
+### Xiaomi_debug_device
 
 Ce paramètre permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
 
@@ -340,7 +340,7 @@ Dans cet exemple, nous avons :
 - le "sid", qui est l'identifiant unique, que nous retrouverons dans Gladys
 - ses "data", qui sont une partie de ses paramètres fonctionnels
 
-Nous allons donc renseigner dans Gladys le paramètre "Xiaomi_debugDevice" avec **weather.v1**, pour ne cibler que ses messages.  
+Nous allons donc renseigner dans Gladys le paramètre "Xiaomi_debug_device" avec **weather.v1**, pour ne cibler que ses messages.  
 >Dans votre cas, le nom du modèle inconnu de Gladys se trouve dans la page de paramétrage du module. Et c'est lui qu'il faut donc renseigner.
 
 **N'oubliez pas de mettre à zéro le paramètre "Xiaomi_debug".**
