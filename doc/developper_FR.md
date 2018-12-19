@@ -6,7 +6,7 @@ L'activation du mode développeur permet de pour accéder à l'API de la passere
 
 L'activation se fait à partir de l'application "Mi Home". Si elle n'est pas installé sur votre téléphone, commencez par le faire :
 
-![app](../img/App_0.jpg)
+![app](../img/app/App_0.jpg)
 
 Une fois celà fait, lancez là.  
 Définissez votre région sur "Chine continentale" en créant votre compte.
