@@ -44,7 +44,7 @@ Pour fonctionner, ce module nécessite :
 
 Nécessite de connaître le mot de passe "développeur" et l'identifiant de chaque passerelle pour pouvoir la commander depuis Gladys, ainsi que les actionneurs, comme la prise ou l'interrupteur.
 
-Voir [Activation du mode développeur](../doc/developper_FR.md)
+Voir [Activation du mode développeur](https://github.com/piznel/gladys-xiaomi/blob/master/doc/developper_FR.md)
 
 ## Installation
 
