@@ -32,8 +32,8 @@
                 <td style="vertical-align:middle">
                   {{gateway.ip}}
                 </td>
-                <td>
-                  <input type="text" ng-model="gateway.password" class="form-control" /></td>
+                <td >
+                  <input type="text" ng-model="gateway.password" class="form-control" ng-style="{'background-color': (gateway.password.length == 0) ? 'rgb(226,139,129)' : '#fff'}"/>
                 </td>
               </tr>
               <tr ng-show="vm.gatewaysCount == 0">

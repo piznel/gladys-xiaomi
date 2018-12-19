@@ -42,20 +42,23 @@ Les périphériques déjà créés par le module officiel sont compatibles avec 
 
 ##  1. <a name='Prrequis'></a>Prérequis
 Pour fonctionner, ce module nécessite :
- - Gladys version 3.10.0 au minimum,
- - Une passerelle Xiaomi non-compatible "HomeKit", avec mode "développeur" activé,
 
-##  2. <a name='Limitations'></a>Limitations
+- Gladys version 3.10.0 au minimum,
+- Une passerelle Xiaomi non-compatible "HomeKit", avec mode "développeur" activé,
+
+## Limitations
+
 Nécessite de connaître le mot de passe "développeur" et l'identifiant de chaque passerelle pour pouvoir la commander depuis Gladys, ainsi que les actionneurs, comme la prise ou l'interrupteur.
 
-Voir https://github.com/fooxy/homeassistant-aqara/wiki/Enable-dev-mode
+Voir [Activation du mode développeur](/doc/developper.md)
 
-##  3. <a name='Installation'></a>Installation
+## Installation
 
-###  3.1. <a name='AjoutercemoduleGladys'></a>Ajouter ce module à Gladys
+### Ajouter ce module à Gladys
 
 - Installez ce module à partir de l'onglet "avancé" du menu "module", en remplissant les différents champs de la façon suivante :
-    * Nom : gladys-xiaomi
+
+° Nom : gladys-xiaomi
     * Version : 0.1.1
     * URL : https://github.com/piznel/gladys-xiaomi.git
     * Slug : xiaomi

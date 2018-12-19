@@ -8,7 +8,6 @@ module.exports = {
   gateways: function(req, res, next) {
     gateways()
       .then((result) => {
-        sails.log.error(result)
         res.json(result)
       })
       .catch(next);
