@@ -44,7 +44,7 @@ Pour fonctionner, ce module nécessite :
 
 Nécessite de connaître le mot de passe "développeur" et l'identifiant de chaque passerelle pour pouvoir la commander depuis Gladys, ainsi que les actionneurs, comme la prise ou l'interrupteur.
 
-Voir [Activation du mode développeur](../doc/developper_FR.md)
+Voir [Activation du mode développeur](doc/developper_FR.md)
 
 ## Installation
 
@@ -292,14 +292,15 @@ S'il est présent, et selon sa valeur, nous obtenons dans les logs les élément
 
 | valeur | Résultat                                                                          |
 |:------:|-----------------------------------------------------------------------------------|
-| 0      | Pas de log (comme "vide" ou paramètre absent)                                     |
-| 1      | tous les messages envoyés par la gateway                                          |
+| 0      | Pas de log (comme "vide" ou paramètre absent).                                    |
+| 1      | tous les messages envoyés par la gateway.                                         |
 | 2      | 1 +  la liste détaillée des périphériques, version "Xiaomi" ( = model)            |
 | 3      | 2 + la liste des périphériques avec le statut de leur réponse à "qui êtes-vous ?" |
-| 4      | les périphériques qui seront créés/mis à jour dans Gladys                         |
-| 5      | Les états des périphériques du 4 qui seront créés dans Gladys                     |
+| 4      | les périphériques qui seront créés/mis à jour dans Gladys.                        |
+| 5      | Les états des périphériques du 4 qui seront créés dans Gladys.                    |
 | 6      | Le message renvoyé aux périphériques qui tardent à répondre.                      |
-| 7      | La commande envoyée par la passerelle vers un actionneur                          |
+| 7      | La commande envoyée par la passerelle vers un actionneur.                         |
+| 8      | L'intégralité des messages Log. L'Aspirine n'est pas fourni !                     |
 
 ### Xiaomi_debug_device
 
@@ -347,7 +348,7 @@ Nous allons donc renseigner dans Gladys le paramètre "Xiaomi_debug_device" avec
 
 L'objectif est donc de regarder les logs défilés, et de noter tous les paramètres fonctionnels du modèle.
 
-Nous obtenons alors des messages de type 'report' :
+Nous obtenons alors des messages de type `report`, `Heartbeat` ou `read_ack`, dont voici des exemples  :
 
     Xiaomi _onMessage.msg : { cmd: 'report',
     model: 'weather.v1',
@@ -369,7 +370,14 @@ Nous obtenons alors des messages de type 'report' :
     short_id: 50313,
     data: '{"pressure":"101660"}' }
 
-*Remarque :* Si c'est une prise, un bouton poussoir, etc..., bref, quelque chose qui n'est pas passif, manipulez le, pour déclencher un maximum de log et être sûr d'avoir toutes les fonctionnalités.
+    Xiaomi _onMessage.msg : { cmd: 'read_ack',
+    model: 'weather.v1',
+    sid: '158d0002322824',
+    short_id: 31008,
+    data: '{"voltage":2975,"temperature":"1793","humidity":"5450","pressure":"100950"}' }
+
+*Remarque :* Si c'est une prise, un bouton poussoir, etc..., bref, quelque chose qui n'est pas passif, manipulez le, pour déclencher un maximum de log et être sûr d'avoir toutes les fonctionnalités.  
+Les messages `Heartbeat`sont plus rare : 1 toutes les 10 minutes pour les appareils branchés sur le secteur, 1 par heure pour ceux à pile.
 
 Par exemple, un modèle de bouton poussoir sans fil peut déclencher de 1 à 4 click.
 
