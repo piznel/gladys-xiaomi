@@ -2,7 +2,11 @@
 # Gladys-Xiaomi : un module pour [Gladys](https://github.com/GladysProject)
 
 Ce module vous permet de piloter les appareils Xiaomi Zigbee compatibles depuis Gladys.
-Les périphériques déjà créés par le module officiel sont compatibles avec ce module et ne devraient pas être recréés. Ils devraient juste être mis-à-jour. A noter que pour "Xiaomi Door & Window", ce dernier pouvant prendre 3 états (ouvert, fermé, inconnu), un nouveau deviceType sera créé. Je pense qu'il est important de savoir si l'information qui est remontée est fiable ou pas. Vous pouvez donc supprimez après installation l'ancien, de type "binary".
+Les périphériques déjà créés par le module officiel sont compatibles avec ce module et ne devraient pas être recréés. Ils devraient juste être mis-à-jour.
+
+>A noter que pour "Xiaomi Door & Window", ce dernier pouvant prendre 3 états (ouvert, fermé, inconnu), un nouveau deviceType sera créé.  
+>Je pense qu'il est important de savoir si l'information qui est remontée est fiable ou pas.  
+>Vous pouvez donc supprimez après installation l'ancien, de type "binary".
 
 - [Gladys-Xiaomi : un module pour Gladys](#gladys-xiaomi--un-module-pour-gladys)
   - [Prérequis](#prérequis)
