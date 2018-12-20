@@ -2,7 +2,7 @@
 # Gladys-Xiaomi : un module pour [Gladys](https://github.com/GladysProject)
 
 Ce module vous permet de piloter les appareils Xiaomi Zigbee compatibles depuis Gladys.
-Les périphériques déjà créés par le module officiel sont compatibles avec ce module et ne devraient pas être recréés. Ils devraient juste être mis-à-jour. N'hésitez pas à me le signaler si ce n'est pas le cas !
+Les périphériques déjà créés par le module officiel sont compatibles avec ce module et ne devraient pas être recréés. Ils devraient juste être mis-à-jour. A noter que pour "Xiaomi Door & Window", ce dernier pouvant prendre 3 états (ouvert, fermé, inconnu), un nouveau deviceType sera créé. Je pense qu'il est important de savoir si l'information qui est remontée est fiable ou pas. Vous pouvez donc supprimez après installation l'ancien, de type "binary".
 
 - [Gladys-Xiaomi : un module pour Gladys](#gladys-xiaomi--un-module-pour-gladys)
   - [Prérequis](#prérequis)
@@ -170,7 +170,7 @@ Les différents ***status*** sont codés dans Gladys de la façon suivante :
 - Le modèle Xiaomi
 - le modèle Aqara
 
-Pour ces 2 modèles, les différents ***status*** sont codés dans Gladys de la façon suivante :
+Pour ces 2 modèles, les différents états (***binary***) sont codés dans Gladys de la façon suivante :
 
     1 = mouvement
     0 = pas de mouvement
@@ -180,7 +180,7 @@ Cette info est renvoyée au bout de 2 minutes, puis 3, 5, 10, 20 et enfin 30 min
 
 ### La prise de courant [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
-Les différents états (***plug***) sont codés dans Gladys de la façon suivante :
+Les différents états (***binary***) sont codés dans Gladys de la façon suivante :
 
     1 = allumé
     0 = Eteins
@@ -208,7 +208,7 @@ Il informe également de la densité de fumée mesurée (***density***).
 
 ### Le bouton wifi à 3 état [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
-Les différents ***status*** sont codés dans Gladys de la façon suivante :
+Les différents ***button*** sont codés dans Gladys de la façon suivante :
 
     0 = Pas de clic
     1 = clic simple
@@ -224,9 +224,9 @@ Capteur classique, permettant d'obtenir la température (***temperature***) en �
 
 ### La sonde de température, d'humidité et de pression [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
-En plus des fonctionnalités du capteur précédent, vous obtiendrez également la pression atmosphérique (***pressure***), en KPa.  
->"En quoi ???? c'est quoi Kpa ???"  
->KPa = kiloPascal, unité de mesure de la pression atmosphérique. Comme dans les bulletins météo !
+En plus des fonctionnalités du capteur précédent, vous obtiendrez également la pression atmosphérique (***pressure***), en Pa.  
+>"En quoi ???? c'est quoi Pa ???"  
+>Pa = Pascal, unité de mesure de la pression atmosphérique. Comme dans les bulletins météo !
 
 ### Le capteur de vibration [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
@@ -398,4 +398,5 @@ ou de faire la demande sur le forum, en fournissant ces infos.
 
 ## Annexe 3 : Liste des équipements compatibles [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
-Cette liste est consultable [ici](https://docs.google.com/spreadsheets/d/1dXCox4rBz478192GKNM8puhFgsQNb1209wt9j3YuIuQ/edit?usp=sharing).
+Cette liste est consultable [ici](https://docs.google.com/spreadsheets/d/1dXCox4rBz478192GKNM8puhFgsQNb1209wt9j3YuIuQ/edit?usp=sharing).  
+Vous pouvez contribuer à renseigner ce tableau, en mettant en commentaire vos remarques/ajouts/modifications.
