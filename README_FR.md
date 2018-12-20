@@ -6,39 +6,39 @@ Les périphériques déjà créés par le module officiel sont compatibles avec 
 
 >A noter que pour "Xiaomi Door & Window", ce dernier pouvant prendre 3 états (ouvert, fermé, inconnu), un nouveau deviceType sera créé.  
 >Je pense qu'il est important de savoir si l'information qui est remontée est fiable ou pas.  
->Vous pouvez donc supprimez après installation l'ancien, de type "binary".
+Vous pouvez donc supprimez après installation l'ancien, de type "binary".
 
 - [Gladys-Xiaomi : un module pour Gladys](#gladys-xiaomi--un-module-pour-gladys)
-  - [Prérequis ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#prérequis-haut-de-page)
+  - [Prérequis](#prérequis)
   - [Limitations](#limitations)
-  - [Installation ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#installation-haut-de-page)
-    - [Ajouter ce module à Gladys ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#ajouter-ce-module-à-gladys-haut-de-page)
-    - [Redémarrer Gladys ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#redémarrer-gladys-haut-de-page)
-    - [Renseigner le ou les mot(s) de passe de votre ou vos passerelle(s) Xiaomi ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#renseigner-le-ou-les-mots-de-passe-de-votre-ou-vos-passerelles-xiaomi-haut-de-page)
-    - [Logique de fonctionnement de ce module ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#logique-de-fonctionnement-de-ce-module-haut-de-page)
-  - [Caractéristiques des appareils compatibles ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#caractéristiques-des-appareils-compatibles-haut-de-page)
-    - [La gateway ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#la-gateway-haut-de-page)
-    - [Le cube ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-cube-haut-de-page)
-    - [Le détecteur de fuite d'eau ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-détecteur-de-fuite-deau-haut-de-page)
-    - [Le détecteur d'ouverture de porte ou fenêtre ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-détecteur-douverture-de-porte-ou-fenêtre-haut-de-page)
-    - [Les détecteurs de mouvement ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#les-détecteurs-de-mouvement-haut-de-page)
-    - [La prise de courant ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#la-prise-de-courant-haut-de-page)
-    - [Le détecteur de fumée ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-détecteur-de-fumée-haut-de-page)
-    - [Le bouton wifi à 3 état ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-bouton-wifi-à-3-état-haut-de-page)
-    - [La sonde de température et d'humidité ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#la-sonde-de-température-et-dhumidité-haut-de-page)
-    - [La sonde de température, d'humidité et de pression ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#la-sonde-de-température-dhumidité-et-de-pression-haut-de-page)
-    - [Le capteur de vibration ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#le-capteur-de-vibration-haut-de-page)
-    - [Les interrupteurs muraux filaires ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#les-interrupteurs-muraux-filaires-haut-de-page)
-    - [Les boutons poussoirs muraux sans fils ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#les-boutons-poussoirs-muraux-sans-fils-haut-de-page)
-  - [Annexe 1 : mode "débugage" ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#annexe-1--mode-débugage-haut-de-page)
-    - [Xiaomi_debug ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#xiaomi_debug-haut-de-page)
-    - [Xiaomi_debug_device ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#xiaomi_debug_device-haut-de-page)
-  - [Annexe 2 : Demander l'ajout d'un périphérique ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#annexe-2--demander-lajout-dun-périphérique-haut-de-page)
-    - [Plongée dans les logs de Gladys ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#plongée-dans-les-logs-de-gladys-haut-de-page)
-    - [Analyse des logs obtenus ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#analyse-des-logs-obtenus-haut-de-page)
-  - [Annexe 3 : Liste des équipements compatibles ![haut de page](#gladys-xiaomi--un-module-pour-gladys)](#annexe-3--liste-des-équipements-compatibles-haut-de-page)
+  - [Installation](#installation)
+    - [Ajouter ce module à Gladys](#ajouter-ce-module-à-gladys)
+    - [Redémarrer Gladys](#redémarrer-gladys)
+    - [Renseigner le ou les mot(s) de passe de votre ou vos passerelle(s) Xiaomi](#renseigner-le-ou-les-mots-de-passe-de-votre-ou-vos-passerelles-xiaomi)
+    - [Logique de fonctionnement de ce module](#logique-de-fonctionnement-de-ce-module)
+  - [Caractéristiques des appareils compatibles](#caractéristiques-des-appareils-compatibles)
+    - [La gateway](#la-gateway)
+    - [Le cube Magique](#le-cube-magique)
+    - [Le détecteur de fuite d'eau](#le-détecteur-de-fuite-deau)
+    - [Le détecteur d'ouverture de porte ou fenêtre](#le-détecteur-douverture-de-porte-ou-fenêtre)
+    - [Les détecteurs de mouvement](#les-détecteurs-de-mouvement)
+    - [La prise de courant](#la-prise-de-courant)
+    - [Le détecteur de fumée](#le-détecteur-de-fumée)
+    - [Le bouton wifi à 3 état](#le-bouton-wifi-à-3-état)
+    - [La sonde de température et d'humidité](#la-sonde-de-température-et-dhumidité)
+    - [La sonde de température, d'humidité et de pression](#la-sonde-de-température-dhumidité-et-de-pression)
+    - [Le capteur de vibration](#le-capteur-de-vibration)
+    - [Les interrupteurs muraux filaires](#les-interrupteurs-muraux-filaires)
+    - [Les boutons poussoirs muraux sans fils](#les-boutons-poussoirs-muraux-sans-fils)
+  - [Annexe 1 : mode "débugage"](#annexe-1--mode-débugage)
+    - [Xiaomi_debug](#xiaomi_debug)
+    - [Xiaomi_debug_device](#xiaomi_debug_device)
+  - [Annexe 2 : Demander l'ajout d'un périphérique](#annexe-2--demander-lajout-dun-périphérique)
+    - [Plongée dans les logs de Gladys](#plongée-dans-les-logs-de-gladys)
+    - [Analyse des logs obtenus](#analyse-des-logs-obtenus)
+  - [Annexe 3 : Liste des équipements compatibles](#annexe-3--liste-des-équipements-compatibles)
 
-## Prérequis [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Prérequis
 
 Pour fonctionner, ce module nécessite :
 
@@ -51,9 +51,9 @@ Nécessite de connaître le mot de passe "développeur" et l'identifiant de chaq
 
 Voir [Activation du mode développeur](doc/developper_FR.md)
 
-## Installation [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Installation
 
-### Ajouter ce module à Gladys [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Ajouter ce module à Gladys
 
 - Installez ce module à partir de l'onglet "avancé" du menu "module", en remplissant les différents champs de la façon suivante :
 
@@ -62,11 +62,11 @@ Voir [Activation du mode développeur](doc/developper_FR.md)
   - URL : `https://github.com/piznel/gladys-xiaomi.git`
   - Slug : `xiaomi-home`
 
-### Redémarrer Gladys [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Redémarrer Gladys
 
 Depuis le premier onglet du menu "Paramètres", en cliquant sur le bouton "Redémarrer".
 
-### Renseigner le ou les mot(s) de passe de votre ou vos passerelle(s) Xiaomi [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Renseigner le ou les mot(s) de passe de votre ou vos passerelle(s) Xiaomi
 
 Retourner dans la liste des modules, et cliquez sur le bouton 'configuration'. La page de configuration contient 3 tableaux :
 
@@ -82,7 +82,7 @@ Il contient la liste des périphériques non-gérés actuellement par ce module.
 
 il contient la liste des matériels qui n'ont pas pu être intégré dans Gladys, car ils ont été déclaré par plusieurs passerelle. Voir le paragraphe suivant pour résoudre cette difficulté.
 
-### Logique de fonctionnement de ce module [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Logique de fonctionnement de ce module
 
 A chaque démarrage de Gladys, un message est envoyé sur votre réseau, auquel seules les passerelles répondent, en nous donnant leur identifiant (= sid chez Xiaomi), ainsi que leur adresse IP. En retour, nous leur demandons alors la liste des identifiants des périphériques qu'elles ont d'enregistré.
 
@@ -104,7 +104,7 @@ Il vous suffit alors, à l'aide de l'application (ou du bouton d'activation du p
 En effet, à interval régulier, les périphériques signalent leur présence à la passerelle, donc à Gladys. Il sera créé à ce moment là.  
 Cet interval est en général d'une heure pour les périphériques à pile, et de 10 mn pour ceux branché électriquement.
 
-## Caractéristiques des appareils compatibles [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Caractéristiques des appareils compatibles
 
 *Vous trouverez leur référence dans ce document.*
 
@@ -117,7 +117,7 @@ Pour tous les appareils à pile (CR2032 ), Xiaomi préconise une tension compris
     0% = 2.800 mV
     100% = 3.300 mV
 
-### La gateway [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### La gateway
 
 >La gateway ne doit pas être celle compatible "HomeKit"
 
@@ -134,7 +134,7 @@ La luminosité (**illumination**) est également enregistrée dans Gladys. Perso
 Le capteur de mouvement n'est pas à ce jour accessible par l'api de Xiaomi. Dommage.  
 La diffusion de vos mp3 sur le haut-parleur n'a pas été codé, bien que pouvant l'être. Lors d'une prochaine release ?
 
-### Le cube [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le cube Magique
 
 Le cube présente de nombreuse ***status***, codifiés de la façons suivantes dans Gladys :
 
@@ -153,14 +153,14 @@ Quant à ***speed***, c'est la vitesse avec laquelle vous avez tourné le cube. 
 
 >Après chaque changement d'état, le cube repasse à "repos" après 1 seconde automatiquement.
 
-### Le détecteur de fuite d'eau [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le détecteur de fuite d'eau
 
 Fonctionnement basique, avec 2 ***status*** :
 
     0 = pas de fuite
     1 = fuite !
 
-### Le détecteur d'ouverture de porte ou fenêtre [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le détecteur d'ouverture de porte ou fenêtre
 
 Les différents ***status*** sont codés dans Gladys de la façon suivante :
 
@@ -168,7 +168,7 @@ Les différents ***status*** sont codés dans Gladys de la façon suivante :
     1 = ouvert
     -1 = inconnu. Sera mis-à-jour automatiquement.
 
-### Les détecteurs de mouvement [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Les détecteurs de mouvement
 
 2 modèles sont compatibles :
 
@@ -183,7 +183,7 @@ Pour ces 2 modèles, les différents états (***binary***) sont codés dans Glad
 Le modèle "Aqara" renvoie également la valeur de la luminosité (***illumination***), comprise entre 0 et 1200 lux, ainsi que le temps écoulé en minute depuis le dernier mouvement (***minutes***).  
 Cette info est renvoyée au bout de 2 minutes, puis 3, 5, 10, 20 et enfin 30 minutes.
 
-### La prise de courant [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### La prise de courant
 
 Les différents états (***binary***) sont codés dans Gladys de la façon suivante :
 
@@ -197,7 +197,7 @@ Cette prise permet également de faire un suivi de la consommation :
 
 Elle possède également la fonctionnalité ***inuse***, indiquant, dans le cas où elle est sur "on", si du courant est consommé ou non. Utile pour couper automatiquement l'alimentation après la charge de vos téléphones !
 
-### Le détecteur de fumée [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le détecteur de fumée
 
 Ce capteur de détection de fumée peut avoir plusieurs ***status*** :
 
@@ -211,7 +211,7 @@ Ce capteur de détection de fumée peut avoir plusieurs ***status*** :
 
 Il informe également de la densité de fumée mesurée (***density***).
 
-### Le bouton wifi à 3 état [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le bouton wifi à 3 état
 
 Les différents ***button*** sont codés dans Gladys de la façon suivante :
 
@@ -223,17 +223,17 @@ Les différents ***button*** sont codés dans Gladys de la façon suivante :
 
 >Après chaque changement d'état, le bouton repasse à "pas de clic" après 1 seconde automatiquement.
 
-### La sonde de température et d'humidité [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### La sonde de température et d'humidité
 
 Capteur classique, permettant d'obtenir la température (***temperature***) en °C et l'humidité (***humidity***) en % du lieu où il se trouve.
 
-### La sonde de température, d'humidité et de pression [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### La sonde de température, d'humidité et de pression
 
 En plus des fonctionnalités du capteur précédent, vous obtiendrez également la pression atmosphérique (***pressure***), en Pa.  
 >"En quoi ???? c'est quoi Pa ???"  
 >Pa = Pascal, unité de mesure de la pression atmosphérique. Comme dans les bulletins météo !
 
-### Le capteur de vibration [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Le capteur de vibration
 
 Capteur assez complexe :
 
@@ -264,14 +264,14 @@ Appelé par Xiaomi de façon étrange ***bed_activity***.
 
 C'est prévu pour passer la nuit avec vous, et ainsi, déterminer la qualité de votre sommeil, selon si vous avez beaucoup bougé ou pas ...Pas testé pour ma part !
 
-### Les interrupteurs muraux filaires [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Les interrupteurs muraux filaires
 
 Qu'ils soient à un ou deux boutons, avec raccordement du neutre ou sans, les 4 modèles sont gérés.
 Fonctionnement très simple : **on** ou **off**.
 
 Dans Gladys, ce sont donc des boutons de type *binary*, identifié par ***Channel_0*** et ***Channel_1***, selon le nombre de boutons de l'interrupteur.
 
-### Les boutons poussoirs muraux sans fils [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Les boutons poussoirs muraux sans fils
 
 Il existe 2 types : avec 1 bouton ou avec 2 boutons.
 
@@ -286,11 +286,11 @@ Ils sont identifiés dans Gladys par ***Channel_0***, ***Channel_1*** et ***dual
 
 >Ils reviennent automatiquement à l'état de repos après 1 seconde.
 
-## Annexe 1 : mode "débugage" [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Annexe 1 : mode "débugage"
 
 2 paramètres supplémentaires peuvent être configurés dans Gladys, afin d'obtenir des logs adaptés à la situation.
 
-### Xiaomi_debug [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Xiaomi_debug
 
 Selon sa valeur, nous obtenons dans les logs les éléments suivants :
 
@@ -306,14 +306,14 @@ Selon sa valeur, nous obtenons dans les logs les éléments suivants :
 | 7      | La commande envoyée par la passerelle vers un actionneur.                         |
 | 10     | L'intégralité des messages Log. L'Aspirine n'est pas fourni !                     |
 
-### Xiaomi_debug_device [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Xiaomi_debug_device
 
 Ce paramètre n'est pas créé lors de l'installation du module.  
 Il permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
 Le modèle est au sens 'Xiaomi', par exemple, pour le détecteur d'ouverture de porte 'Aqara', son modèle est `sensor_magnet.aq2`.  
-Vous trouverez en [Annexe 3](#annexe-3--liste-des-équipements-compatibles-haut-de-page) les différents modèles gérés par le module.
+Vous trouverez en [Annexe 3]() les différents modèles gérés par le module.
 
-## Annexe 2 : Demander l'ajout d'un périphérique [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Annexe 2 : Demander l'ajout d'un périphérique
 
 Excellente idée ! :)
 
@@ -327,7 +327,7 @@ Vous aurez également un message dans les logs :
 
     Xiaomi module : impossible to create device  + 'détail du périphérique'
 
-### Plongée dans les logs de Gladys [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Plongée dans les logs de Gladys
 
 si vous n'avez pas trouvé le message précédent dans Gladys, créer le paramètre "Xiaomi_debug" dans Gladys, et donnez lui la valeur de 1.
 
@@ -388,7 +388,7 @@ Par exemple, un modèle de bouton poussoir sans fil peut déclencher de 1 à 4 c
 
 >Après analyse, soit vous supprimez le paramètre, soit vous mettez une valeur non-significative ; en effet, Gladys refusera un paramètre vide.
 
-### Analyse des logs obtenus [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+### Analyse des logs obtenus
 
 A ce stade, nous avons une bonne base pour pouvoir intégrer ce capteur :
 
@@ -401,7 +401,9 @@ A ce stade, nous avons une bonne base pour pouvoir intégrer ce capteur :
 Il ne vous reste plus qu'à créer une issue sur le github du module
 ou de faire la demande sur le forum, en fournissant ces infos.
 
-## Annexe 3 : Liste des équipements compatibles [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+## Annexe 3 : Liste des équipements compatibles
 
 Cette liste est consultable [ici](https://docs.google.com/spreadsheets/d/1dXCox4rBz478192GKNM8puhFgsQNb1209wt9j3YuIuQ/edit?usp=sharing).  
-C'est une feuille de calcul "Google Docs" ; Vous pouvez contribuer à la renseigner, en mettant en commentaire vos remarques/ajouts/modifications.
+Vous pouvez contribuer à renseigner ce tableau, en mettant en commentaire vos remarques/ajouts/modifications.
+
+[![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
