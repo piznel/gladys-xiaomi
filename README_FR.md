@@ -134,6 +134,9 @@ La luminosité (**illumination**) est également enregistrée dans Gladys. Perso
 Le capteur de mouvement n'est pas à ce jour accessible par l'api de Xiaomi. Dommage.  
 La diffusion de vos mp3 sur le haut-parleur n'a pas été codé, bien que pouvant l'être. Lors d'une prochaine release ?
 
+> A l'issu de la première installation, si la gateway est éteinte pendant ce processus, la couleur et la luminosité ne seront pas initialisées.  
+> Il faut donc, pour pouvoir l'allumer, définir avant une couleur et une luminosité.
+
 ### Le cube Magique
 
 Le cube présente de nombreuse ***status***, codifiés de la façons suivantes dans Gladys :
