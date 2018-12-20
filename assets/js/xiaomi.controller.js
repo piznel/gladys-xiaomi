@@ -49,6 +49,13 @@
                xiaomiService.errorNotificationTranslated('NO_GATEWAY')
                vm.gatewaysReady = false
              } else {
+               vm.gateways.forEach(gateway => {
+                 if(!gateway.validKey) {
+                  xiaomiService.errorNotificationTranslated('INVALID_KEY')
+                  break;
+                 }
+               });
+               if(vm.gateways.k)
                vm.gatewaysReady = true
              }
            })

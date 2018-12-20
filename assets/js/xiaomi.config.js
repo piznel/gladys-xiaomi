@@ -24,7 +24,8 @@ var translationsEN = {
   UNKNOWN_TEXT_2: "If you wish to participate in its improvement, you can do so by following the instructions indicated on the ",
   UNKNOWN_TEXT_3: "module's web page.",
   GITHUB_README: "https://github.com/piznel/gladys-xiaomi/blob/master/README.md",
-  PASSWORD_UPDATED: "registered passwords!"
+  PASSWORD_UPDATED: "registered passwords!",
+  INVALID_KEY: "Invalid key!"
 
 };
 
@@ -54,7 +55,8 @@ var translationsFR = {
   UNKNOWN_TEXT_2: "Si vous souhaitez participer à son amélioration, vous pouvez le faire en suivant les consignes indiquées sur la ",
   UNKNOWN_TEXT_3: "page web du module.",
   GITHUB_README: "https://github.com/piznel/gladys-xiaomi/blob/master/README_FR.md",
-  PASSWORD_UPDATED: "mots de passe enregistrés !"
+  PASSWORD_UPDATED: "mots de passe enregistrés !",
+  INVALID_KEY: "Clé invalide !"
 };
 
 angular
