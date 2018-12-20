@@ -44,11 +44,8 @@
             </tbody>
           </table>
         </div>
-        <div class="box-footer">
-          <button class="btn btn-flat btn-success" ng-click="vm.refresh()"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
-          <button class="btn btn-flat btn-success" ng-click="vm.savePassword()"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
-        </div>
-      </div>
+
+      </div>     
     </div>
     <div class="col-centered col-md-3">
       <div class="box box-widget widget-user-2 card grid-item">
@@ -123,21 +120,30 @@
       </div>
     </div>
   </div>
+  <div class="row">
+      <div class="col-centered col-md-12">
+        <div class="box-footer">
+          <button class="btn btn-flat btn-success" ng-click="vm.refresh()"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
+          <button class="btn btn-flat btn-success" ng-click="vm.savePassword()"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
+        </div> 
+      </div>
+  </div>
+
   <div class="row ng-cloak">
-    <div class="col-centered col-md-4">
+    <div class="col-centered col-md-6">
       {{ 'GATEWAY_TEXT_1' | translate }}<br />
       {{ 'GATEWAY_TEXT_2' | translate }}<br />
       {{ 'GATEWAY_TEXT_3' | translate }}<br />
       {{ 'GATEWAY_TEXT_4' | translate }}<br />
       {{ 'GATEWAY_TEXT_5' | translate }}
     </div>
-    <div class="col-centered col-md-4">
+    <div class="col-centered col-md-3">
       {{ 'UNCREATED_TEXT_1' | translate }}<br />
       {{ 'UNCREATED_TEXT_2' | translate }}<br />
       {{ 'UNCREATED_TEXT_3' | translate }}<br />
       {{ 'UNCREATED_TEXT_4' | translate }}
     </div>
-    <div class="col-centered col-md-4">
+    <div class="col-centered col-md-3">
       {{ 'UNKNOWN_TEXT_1' | translate }}<br />
       {{ 'UNKNOWN_TEXT_2' | translate }} <a href="{{ 'GITHUB_README' | translate }}" target=_blank>{{ 'UNKNOWN_TEXT_3' | translate }}</a>
     </div>
