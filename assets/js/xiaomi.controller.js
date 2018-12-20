@@ -52,7 +52,6 @@
             for(var gateway of vm.gateways) {
               if(!gateway.validKey) {
                xiaomiService.errorNotificationTranslated('INVALID_KEY')
-               break;
               }
             };
             vm.gatewaysReady = true
