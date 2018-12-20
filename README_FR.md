@@ -314,7 +314,7 @@ Selon sa valeur, nous obtenons dans les logs les éléments suivants :
 Ce paramètre n'est pas créé lors de l'installation du module.  
 Il permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
 Le modèle est au sens 'Xiaomi', par exemple, pour le détecteur d'ouverture de porte 'Aqara', son modèle est `sensor_magnet.aq2`.  
-Vous trouverez en [Annexe 3]() les différents modèles gérés par le module.
+Vous trouverez en [Annexe 3](#annexe-3--liste-des-équipements-compatibles) les différents modèles gérés par le module.
 
 ## Annexe 2 : Demander l'ajout d'un périphérique
 
