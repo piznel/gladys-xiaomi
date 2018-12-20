@@ -403,4 +403,4 @@ ou de faire la demande sur le forum, en fournissant ces infos.
 ## Annexe 3 : Liste des équipements compatibles [![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
 
 Cette liste est consultable [ici](https://docs.google.com/spreadsheets/d/1dXCox4rBz478192GKNM8puhFgsQNb1209wt9j3YuIuQ/edit?usp=sharing).  
-Vous pouvez contribuer à renseigner ce tableau, en mettant en commentaire vos remarques/ajouts/modifications.
+C'est une feuille de calcul "Google Docs" ; Vous pouvez contribuer à la renseigner, en mettant en commentaire vos remarques/ajouts/modifications.
