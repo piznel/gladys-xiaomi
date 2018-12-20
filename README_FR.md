@@ -281,14 +281,13 @@ Ils sont identifiés dans Gladys par ***Channel_0***, ***Channel_1*** et ***dual
 
 >Ils reviennent automatiquement à l'état de repos après 1 seconde.
 
-## Annexe : mode "débugage"
+## Annexe 1 : mode "débugage"
 
-2 paramètres supplémentaires peuvent être créés dans Gladys, afin d'obtenir des logs adaptés à la situation.
+2 paramètres supplémentaires peuvent être configurés dans Gladys, afin d'obtenir des logs adaptés à la situation.
 
 ### Xiaomi_debug
 
-Ce paramètre, s'il n'est pas présent, ne bloquera pas le module.
-S'il est présent, et selon sa valeur, nous obtenons dans les logs les éléments suivants :
+Selon sa valeur, nous obtenons dans les logs les éléments suivants :
 
 | valeur | Résultat                                                                          |
 |:------:|-----------------------------------------------------------------------------------|
@@ -300,15 +299,16 @@ S'il est présent, et selon sa valeur, nous obtenons dans les logs les élément
 | 5      | Les états des périphériques du 4 qui seront créés dans Gladys.                    |
 | 6      | Le message renvoyé aux périphériques qui tardent à répondre.                      |
 | 7      | La commande envoyée par la passerelle vers un actionneur.                         |
-| 8      | L'intégralité des messages Log. L'Aspirine n'est pas fourni !                     |
+| 10     | L'intégralité des messages Log. L'Aspirine n'est pas fourni !                     |
 
 ### Xiaomi_debug_device
 
-Ce paramètre permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
+Ce paramètre n'est pas créé lors de l'installation du module.  
+Il permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
+Le modèle est au sens 'Xiaomi', par exemple, pour le détecteur d'ouverture de porte 'Aqara', son modèle est `sensor_magnet.aq2`.  
+Vous trouverez en [Annexe 3]() les différents modèles gérés par le module.
 
-Le modèle peut-être obtenu en mettant à 1 le paramètre précédent.
-
-## Annexe : Demander l'ajout d'un périphérique
+## Annexe 2 : Demander l'ajout d'un périphérique
 
 Excellente idée ! :)
 
@@ -381,6 +381,8 @@ Les messages `Heartbeat`sont plus rare : 1 toutes les 10 minutes pour les appare
 
 Par exemple, un modèle de bouton poussoir sans fil peut déclencher de 1 à 4 click.
 
+>Après analyse, soit vous supprimez le paramètre, soit vous mettez une valeur non-significative ; en effet, Gladys refusera un paramètre vide.
+
 ### Analyse des logs obtenus
 
 A ce stade, nous avons une bonne base pour pouvoir intégrer ce capteur :
@@ -389,6 +391,11 @@ A ce stade, nous avons une bonne base pour pouvoir intégrer ce capteur :
   - temperature : "2105"
   - humidity : "4394"
   - pressure : "101660"
+  - voltage :  2815
 
 Il ne vous reste plus qu'à créer une issue sur le github du module
 ou de faire la demande sur le forum, en fournissant ces infos.
+
+## Annexe 3 : Liste des équipements compatibles
+
+Cette liste est consultable [ici]().
