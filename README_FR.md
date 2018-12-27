@@ -30,7 +30,7 @@ Vous pouvez donc supprimez après installation l'ancien, de type "binary".
     - [Le capteur de vibration](#le-capteur-de-vibration)
     - [Les interrupteurs muraux filaires](#les-interrupteurs-muraux-filaires)
     - [Les boutons poussoirs muraux sans fils](#les-boutons-poussoirs-muraux-sans-fils)
-  - [Annexe 1 : mode "débugage"](#annexe-1--mode-débugage)
+  - [Annexe 1 : mode "débogage"](#annexe-1--mode-débugage)
     - [Xiaomi_debug](#xiaomi_debug)
     - [Xiaomi_debug_device](#xiaomi_debug_device)
   - [Annexe 2 : Demander l'ajout d'un périphérique](#annexe-2--demander-lajout-dun-périphérique)
@@ -289,7 +289,7 @@ Ils sont identifiés dans Gladys par ***Channel_0***, ***Channel_1*** et ***dual
 
 >Ils reviennent automatiquement à l'état de repos après 1 seconde.
 
-## Annexe 1 : mode "débugage"
+## Annexe 1 : mode "débogage"
 
 2 paramètres supplémentaires peuvent être configurés dans Gladys, afin d'obtenir des logs adaptés à la situation.
 
@@ -315,6 +315,8 @@ Ce paramètre n'est pas créé lors de l'installation du module.
 Il permet de n'obtenir dans les logs uniquement les messages provenant des périphériques dont le modèle est la valeur de ce paramètre.
 Le modèle est au sens 'Xiaomi', par exemple, pour le détecteur d'ouverture de porte 'Aqara', son modèle est `sensor_magnet.aq2`.  
 Vous trouverez en [Annexe 3](#annexe-3--liste-des-équipements-compatibles) les différents modèles gérés par le module.
+
+**Attention il sera nécessaire de redémarrer Gladys pour que le mode débogage souhaité soit pris en compte !**
 
 ## Annexe 2 : Demander l'ajout d'un périphérique
 
