@@ -46,6 +46,19 @@
         </div>
 
       </div>
+      <div class="box-footer">
+        <button class="btn btn-flat btn-primary" ng-click="vm.refresh()"><i class="fa fa-refresh"></i> {{ 'REFRESH' |
+          translate }}</button>
+        <button class="btn btn-flat btn-primary" ng-click="vm.savePassword()"><i class="fa fa-save"></i> {{ 'SAVE' |
+          translate }}</button>
+      </div>
+      <div>
+        {{ 'GATEWAY_TEXT_1' | translate }}<br />
+        {{ 'GATEWAY_TEXT_2' | translate }}<br />
+        {{ 'GATEWAY_TEXT_3' | translate }}<br />
+        {{ 'GATEWAY_TEXT_4' | translate }}<br />
+        {{ 'GATEWAY_TEXT_5' | translate }}
+      </div>
     </div>
     <div class="col-centered col-md-3">
       <div class="box box-widget widget-user-2 card grid-item">
@@ -82,6 +95,12 @@
           </table>
         </div>
       </div>
+      <div>
+        {{ 'UNCREATED_TEXT_1' | translate }}<br />
+        {{ 'UNCREATED_TEXT_2' | translate }}<br />
+        {{ 'UNCREATED_TEXT_3' | translate }}<br />
+        {{ 'UNCREATED_TEXT_4' | translate }}
+      </div>
     </div>
     <div class="col-centered col-md-3">
       <div class="box box-widget widget-user-2 card grid-item">
@@ -98,6 +117,9 @@
                 <th>
                   {{ 'MODEL' | translate }}
                 </th>
+                <th>
+                  {{ 'SELECTED' | translate }}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -108,6 +130,7 @@
                 <td>
                   {{unknown.model}}
                 </td>
+                <td><input type="radio" name="radio" id="optionsRadios" value="value" ng-click="vm.unknownDevice = unknown"></td>
               </tr>
               <tr ng-show="vm.unknownCount == 0">
                 <td colspan="3" style="text-align:center" class="text-green">
@@ -118,33 +141,33 @@
           </table>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-centered col-md-12">
       <div class="box-footer">
-        <button class="btn btn-flat btn-success" ng-click="vm.refresh()"><i class="fa fa-refresh"></i> {{ 'REFRESH' | translate }}</button>
-        <button class="btn btn-flat btn-success" ng-click="vm.savePassword()"><i class="fa fa-save"></i> {{ 'SAVE' | translate }}</button>
+        <button ng-if="!vm.unknownReady" class="btn btn-flat btn-primary" data-toggle="modal" data-target=".xiaomi-logUnknownModal" ng-click="vm.logUnknownStart()"><i
+            class="fa fa-file-text"></i> {{ 'SHOW_LOG' |
+            translate }}</button>
+      </div>
+      <div>
+        {{ 'UNKNOWN_TEXT_1' | translate }}<br />
+        {{ 'UNKNOWN_TEXT_2' | translate }} <a href="{{ 'GITHUB_README' | translate }}" target=_blank>{{ 'UNKNOWN_TEXT_3'
+          | translate }}</a>
       </div>
     </div>
   </div>
-  <div class="row ng-cloak">
-    <div class="col-centered col-md-6">
-      {{ 'GATEWAY_TEXT_1' | translate }}<br />
-      {{ 'GATEWAY_TEXT_2' | translate }}<br />
-      {{ 'GATEWAY_TEXT_3' | translate }}<br />
-      {{ 'GATEWAY_TEXT_4' | translate }}<br />
-      {{ 'GATEWAY_TEXT_5' | translate }}
-    </div>
-    <div class="col-centered col-md-3">
-      {{ 'UNCREATED_TEXT_1' | translate }}<br />
-      {{ 'UNCREATED_TEXT_2' | translate }}<br />
-      {{ 'UNCREATED_TEXT_3' | translate }}<br />
-      {{ 'UNCREATED_TEXT_4' | translate }}
-    </div>
-    <div class="col-centered col-md-3">
-      {{ 'UNKNOWN_TEXT_1' | translate }}<br />
-      {{ 'UNKNOWN_TEXT_2' | translate }} <a href="{{ 'GITHUB_README' | translate }}" target=_blank>{{ 'UNKNOWN_TEXT_3' | translate }}</a>
+  <div class="modal fade xiaomi-logUnknownModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">{{vm.unknownDevice.model}}</h4>
+        </div>
+        <div class="modal-body">
+          <pre style="height:370px"><code id="idUnknownLog">{{vm.logUnknown}}</code></pre>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal" ng-click="vm.logUnknownStop()">STOP</button>
+        </div>
+      </div>
     </div>
   </div>
+
+
 </div>

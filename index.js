@@ -16,14 +16,16 @@ module.exports = function(sails) {
         'get /xiaomi/gateways': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next),
         'get /xiaomi/uncreated': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next),
         'get /xiaomi/unknown': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next),
-        'patch /xiaomi/savepassword': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next)
+        'patch /xiaomi/savepassword': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next),
+        'patch /xiaomi/log/unknown': (req, res, next) => sails.hooks.policies.middleware.checktoken(req, res, next)
 
       },
       after: {
         'get /xiaomi/gateways': xiaomiController.gateways,
         'get /xiaomi/uncreated': xiaomiController.uncreated,
         'get /xiaomi/unknown': xiaomiController.unknown,
-        'patch /xiaomi/savepassword': xiaomiController.savePassword
+        'patch /xiaomi/savepassword': xiaomiController.savePassword,
+        'patch /xiaomi/log/unknown': xiaomiController.logUnknown
       }
     }
   };

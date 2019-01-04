@@ -26,8 +26,11 @@ var translationsEN = {
   UNKNOWN_TEXT_3: "module's web page.",
   GITHUB_README: "https://github.com/piznel/gladys-xiaomi/blob/master/README.md",
   PASSWORD_UPDATED: "registered passwords!",
-  INVALID_KEY: "Invalid key!"
-
+  INVALID_KEY: "Invalid key!",
+  UNKNOWN_FOUND: "Unknown devices have been found!",
+  UNCREATED_FOUND: "Devices have not been created!",
+  SELECTED: "Selected",
+  SHOW_LOG: "View logs"
 };
 
 var translationsFR = {
@@ -58,7 +61,11 @@ var translationsFR = {
   UNKNOWN_TEXT_3: "page web du module.",
   GITHUB_README: "https://github.com/piznel/gladys-xiaomi/blob/master/README_FR.md",
   PASSWORD_UPDATED: "mots de passe enregistrés !",
-  INVALID_KEY: "Clé invalide !"
+  INVALID_KEY: "Clé invalide !",
+  UNKNOWN_FOUND: "Des périphériques inconnus ont été trouvé !",
+  UNCREATED_FOUND : "Des périphériques n'ont pas été créé !",
+  SELECTED: "Sélectionné",
+  SHOW_LOG: "Affichez les logs"
 };
 
 angular

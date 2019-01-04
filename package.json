@@ -1,6 +1,6 @@
 {
   "name": "gladys-xiaomi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gladys module to control xiaomi",
   "main": "index.js",
   "keywords": [

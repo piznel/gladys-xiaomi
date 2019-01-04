@@ -14,6 +14,7 @@
       uncreated: uncreated,
       unknown: unknown,
       savePassword: savePassword,
+      logUnknown: logUnknown,
       successNotificationTranslated: successNotificationTranslated,
       errorNotificationTranslated: errorNotificationTranslated
     };
@@ -34,6 +35,10 @@
 
     function savePassword(options) {
       return $http({ method: 'PATCH', url: '/xiaomi/savepassword/', data: options });
+    }
+
+    function logUnknown(options) {
+      return $http({ method: 'PATCH', url: '/xiaomi/log/unknown/', data: options });
     }
 
     function successNotificationTranslated(key, complement) {

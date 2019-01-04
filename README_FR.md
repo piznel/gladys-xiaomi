@@ -1,8 +1,9 @@
+### [English version here!](README.md)
 
 # Gladys-Xiaomi : un module pour [Gladys](https://github.com/GladysProject)
 
-Ce module vous permet de piloter les appareils Xiaomi Zigbee compatibles depuis Gladys.
-Les périphériques déjà créés par le module officiel sont compatibles avec ce module et ne devraient pas être recréés. Ils devraient juste être mis-à-jour.
+Ce module vous permet de piloter les appareils Xiaomi Zigbee compatibles depuis Gladys.  
+Ce module est retro-compatible avec le module officiel : les périphériques déjà créés ne seront pas recréés.
 
 >A noter que pour "Xiaomi Door & Window", ce dernier pouvant prendre 3 états (ouvert, fermé, inconnu), un nouveau deviceType sera créé.  
 >Je pense qu'il est important de savoir si l'information qui est remontée est fiable ou pas.  
@@ -30,12 +31,11 @@ Vous pouvez donc supprimez après installation l'ancien, de type "binary".
     - [Le capteur de vibration](#le-capteur-de-vibration)
     - [Les interrupteurs muraux filaires](#les-interrupteurs-muraux-filaires)
     - [Les boutons poussoirs muraux sans fils](#les-boutons-poussoirs-muraux-sans-fils)
-  - [Annexe 1 : mode "débogage"](#annexe-1--mode-débugage)
+  - [Annexe 1 : mode "débogage"](#annexe-1--mode-débogage)
     - [Xiaomi_debug](#xiaomi_debug)
     - [Xiaomi_debug_device](#xiaomi_debug_device)
   - [Annexe 2 : Demander l'ajout d'un périphérique](#annexe-2--demander-lajout-dun-périphérique)
     - [Plongée dans les logs de Gladys](#plongée-dans-les-logs-de-gladys)
-    - [Analyse des logs obtenus](#analyse-des-logs-obtenus)
   - [Annexe 3 : Liste des équipements compatibles](#annexe-3--liste-des-équipements-compatibles)
 
 ## Prérequis
@@ -58,7 +58,7 @@ Voir [Activation du mode développeur](doc/developper_FR.md)
 - Installez ce module à partir de l'onglet "avancé" du menu "module", en remplissant les différents champs de la façon suivante :
 
   - Nom : `gladys-xiaomi`
-  - Version : `0.1.1`
+  - Version : `0.1.2`
   - URL : `https://github.com/piznel/gladys-xiaomi.git`
   - Slug : `xiaomi-home`
 
@@ -334,29 +334,8 @@ Vous aurez également un message dans les logs :
 
 ### Plongée dans les logs de Gladys
 
-si vous n'avez pas trouvé le message précédent dans Gladys, créer le paramètre "Xiaomi_debug" dans Gladys, et donnez lui la valeur de 1.
-
-Redémarrez Gladys, console ouverte : très vite, vous verrez les messages de la passerelle, sous cette forme :
-
-    Xiaomi _onMessage.msg : { cmd: 'read_ack',
-    model: 'weather.v1',
-    sid: '158d00023238be',
-    short_id: 22966,
-    data: '{"voltage":2815}' }
-
-Dans cet exemple, nous avons :
-
-- le type de message que nous transmet la passerelle, venant du périphérique (*read_ack*)
-- le "model"(*weather.v1*), qui est une sonde Aqara de température/humidité/pression,
-- le "sid", qui est l'identifiant unique, que nous retrouverons dans Gladys
-- ses "data", qui sont une partie de ses paramètres fonctionnels
-
-Nous allons donc renseigner dans Gladys le paramètre "Xiaomi_debug_device" avec **weather.v1**, pour ne cibler que ses messages.  
->Dans votre cas, le nom du modèle inconnu de Gladys se trouve dans la page de paramétrage du module. Et c'est lui qu'il faut donc renseigner.
-
-***N'oubliez pas de mettre à zéro le paramètre "Xiaomi_debug".***
-
-L'objectif est donc de regarder les logs défilés, et de noter tous les paramètres fonctionnels du modèle.
+Ne vous inquiettez pas, c'est très simple : dans le tableau précédent, cocher le périphérique qui vous intéresse, puis cliquez sur le bouton "Affichez les logs".  
+Une fenêtre va s'ourvir, il ne vous reste plus qu'à attendre l'affichage des messages du périphérique coché, ou bien de les générer en le manipulant.
 
 Nous obtenons alors des messages de type `report`, `Heartbeat` ou `read_ack`, dont voici des exemples  :
 
@@ -391,20 +370,8 @@ Les messages `Heartbeat`sont plus rare : 1 toutes les 10 minutes pour les appare
 
 Par exemple, un modèle de bouton poussoir sans fil peut déclencher de 1 à 4 click.
 
->Après analyse, soit vous supprimez le paramètre, soit vous mettez une valeur non-significative ; en effet, Gladys refusera un paramètre vide.
-
-### Analyse des logs obtenus
-
-A ce stade, nous avons une bonne base pour pouvoir intégrer ce capteur :
-
-- model : 'weather.v1'
-  - temperature : "2105"
-  - humidity : "4394"
-  - pressure : "101660"
-  - voltage :  2815
-
 Il ne vous reste plus qu'à créer une issue sur le github du module
-ou de faire la demande sur le forum, en fournissant ces infos.
+ou de faire la demande sur le forum, en fournissant ces infos (un copier-coller suffira).
 
 ## Annexe 3 : Liste des équipements compatibles
 
