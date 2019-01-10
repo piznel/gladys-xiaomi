@@ -19,11 +19,17 @@
     vm.unknown = []
     vm.unknownReady = false;
     vm.unknowCount = 0;
+    vm.unknownDevice = null;
+    vm.logUnknownDevice = '';
+    vm.logUnknown = '';    
 
     vm.refresh = refresh;
     vm.savePassword = savePassword;
+    vm.logUnknownStart = logUnknownStart;
+    vm.logUnknownStop = logUnknownStop;
 
     activate()
+    waitForUnknownLog()
 
     function refresh() {
       activate()
@@ -64,7 +70,9 @@
           vm.uncreated = result.data
           vm.uncreatedCount = vm.uncreated.length;
           if (vm.uncreatedCount === 0) {
-            xiaomiService.successNotificationTranslated('NO_UNKNOWN')
+            xiaomiService.successNotificationTranslated('NO_UNCREATED')
+          } else {
+            xiaomiService.errorNotificationTranslated('UNCREATED_FOUND')
           }
           vm.uncreatedReady = true
         })
@@ -75,12 +83,30 @@
           vm.unknown = result.data
           vm.unknownCount = vm.unknown.length
           if (vm.unknownCount === 0) {
-            xiaomiService.successNotificationTranslated('NO_UNCREATED')
+            xiaomiService.successNotificationTranslated('NO_UNKNOWN')
+            vm.unknownReady = true
+          } else {
+            xiaomiService.errorNotificationTranslated('UNKNOWN_FOUND')
+            vm.unknownReady = false
           }
-          vm.unknownReady = true
+          
         })
     }
 
+    function logUnknownStart() {
+      vm.logUnknown = '';
+      xiaomiService.logUnknown(vm.unknownDevice)
+    }
 
+    function logUnknownStop() {
+      xiaomiService.logUnknown()
+    }
+
+    function waitForUnknownLog() {
+      io.socket.on('xiaomi_module_log', function(message) {
+        vm.logUnknown = vm.logUnknown + JSON.stringify(message, null, 4) + '\n'
+        $scope.$apply();
+      });
+    }
   }
 })();

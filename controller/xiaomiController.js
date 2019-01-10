@@ -2,6 +2,8 @@ gateways = require('../lib/xiaomi.gateways.js');
 uncreated = require('../lib/xiaomi.uncreatedDevices.js');
 unknown = require('../lib/xiaomi.unknownDevices.js');
 savePassword = require('../lib/xiaomi.savePassword.js');
+shared = require('../lib/xiaomi.shared.js')
+
 
 module.exports = {
 
@@ -29,5 +31,10 @@ module.exports = {
     savePassword(req.body)
       .then((result) => res.json(result))
       .catch(next);
+  },
+
+  logUnknown: function(req, res, next) {
+    shared.logUnknown = req.body
+    sails.log('shared.logUnknown', shared.logUnknown)
   }
 }
