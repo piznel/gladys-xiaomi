@@ -378,5 +378,5 @@ ou de faire la demande sur le forum, en fournissant ces infos (un copier-coller 
 Cette liste est consultable [ici](https://docs.google.com/spreadsheets/d/1dXCox4rBz478192GKNM8puhFgsQNb1209wt9j3YuIuQ/edit?usp=sharing).  
 Vous pouvez contribuer à renseigner ce tableau, en mettant en commentaire vos remarques/ajouts/modifications.
 
-[![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys)
+[![haut de page](img/fleche-haut.png)](#gladys-xiaomi--un-module-pour-gladys) [![Greenkeeper badge](https://badges.greenkeeper.io/piznel/gladys-xiaomi.svg)](https://greenkeeper.io/)
 
